@@ -184,7 +184,7 @@ subroutine readArrays()
 
     do j=1,ldy
         do i=1,ldx
-            xy2(i,j) = rank*1.0 + xy(i,j)/100.0
+            xy2(i,j) = rank*1.0 + xy(i,j)/20.0
         enddo
     enddo
     

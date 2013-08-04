@@ -129,9 +129,9 @@ subroutine generateLocalArrays()
     use coupling_writer_2D_comm
     implicit none
 
-    print '("rank=",i0," set matrix to ",f6.2)', rank, 1.0*rank+0.01*ts
-    xy = 1.0*rank + 0.01*ts
-    !xy = 1.0*rank + 1.0*ts
+    print '("rank=",i0," set matrix to ",f6.2)', rank, 1.0*rank+1.0*(ts-1)
+    !xy = 1.0*rank + 0.01*ts
+    xy = 1.0*rank + 1.0*(ts-1)
 
 end subroutine generateLocalArrays
 

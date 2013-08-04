@@ -2,7 +2,8 @@
 #PBS -A STF006
 #PBS -N coupling
 #PBS -j oe
-#PBS -l walltime=1:00:00,nodes=3
+#PBS -q debug
+#PBS -l walltime=0:10:00,nodes=3
 ## On Cray, you need -lnodes=3 (3 nodes for 3 separate apruns)
 ## On a cluster, you need WRITEPROC+STAGINGPROC+READPROC cores
 
@@ -93,7 +94,7 @@ fi
 
 # Start WRITER
 echo "-- Start WRITER on $WRITEPROC PEs"
-$RUNCMD $WRITEPROC ./coupling_writer_2D $WPX $WPY 10 10 5  >& log.writer &
+$RUNCMD $WRITEPROC ./coupling_writer_2D $WPX $WPY 65 129 5  >& log.writer &
 
 # Start READER
 echo "-- Start READER on $READPROC PEs."
