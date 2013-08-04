@@ -17,5 +17,5 @@ function reader (file)
     assignin('base','xy',data);
 
     % check out the variable after the function returns
-    %    whos('xy’)
+    %    whos xy
 
