@@ -16,7 +16,8 @@
   </adios-group>
 
   <!-- Choose an output method for the above group. 
-       MPI: write 1 file, each process writes its own piece into the file
+       MPI: write 1 file, each process writes its piece into the same file
+       POSIX: write 1 file per process writes 
        VAR_MERGE: aggregate and merge blocks (up to two levels of aggregation)
                   default aggregation buffer size is 2 MB
        VAR_MERGE: limit the aggregation level by decreasing the aggregation buffer
@@ -24,6 +25,9 @@
   -->
   <transport group="writer" method="MPI"/>
   <!--
+  <transport group="writer" method="POSIX"/>
+  <transport group="writer" method="MPI_AGGREGATE">num_aggregators=4;num_ost=2</transport>
+  <transport group="writer" method="PHDF5"/>
   <transport group="writer" method="VAR_MERGE">io_method=MPI</transport>
   <transport group="writer" method="VAR_MERGE">chunk_size=300000;io_method=MPI</transport>
   -->
